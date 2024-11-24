@@ -178,6 +178,7 @@ class VenueBookingSystem:
             response.raise_for_status()
 
             response_json = response.json()
+            print(response_json)
 
             if response_json.get("errorcode") == 0 and response_json.get("message") == "":
                 logger.info(f"[{func_name}] 预订成功！请前往微信网页查看订单详情")
@@ -309,7 +310,7 @@ def main():
 
     try:
         # 等待直到目标时间
-        # wait_until_target_time()
+        wait_until_target_time()
 
         success_count = [0]
         preferred_time_list = ["16:00", "17:00"]
